@@ -158,38 +158,47 @@ paths:
           in: query
           schema:
             type: integer
+          description: Start index for the search results
         - name: tx_solr[rows]
           in: query
           schema:
             type: integer
+          description: Number of rows to return
         - name: tx_solr[geolabel]
           in: query
           schema:
             type: string
+          description: Geographical label for filtering results
         - name: tx_solr[latlon]
           in: query
           schema:
             type: string
+          description: Latitude and longitude for filtering results
         - name: tx_solr[ops]
           in: query
           schema:
             type: string
+          description: OPS codes for filtering results
         - name: tx_solr[searchlabel]
           in: query
           schema:
             type: string
+          description: Search label for filtering results
         - name: tx_solr[icd]
           in: query
           schema:
             type: string
+          description: ICD codes for filtering results
         - name: tx_solr[quantile]
           in: query
           schema:
             type: string
+          description: Quantile for filtering results
         - name: tx_solr[department]
           in: query
           schema:
             type: string
+          description: Department for filtering results
       responses:
         '200':
           description: Successful response
@@ -346,7 +355,7 @@ paths:
                             type: string
                           department:
                             type: string
-                      searchResultCound:
+                      searchResultCount:
                         type: integer
                       maxSearchResultsFoundLabel:
                         type: string
@@ -362,26 +371,32 @@ paths:
           required: true
           schema:
             type: integer
+          description: Unique identifier of the hospital
         - name: tx_tverzhospitaldata_show[department]
           in: query
           schema:
             type: string
+          description: Department filter
         - name: tx_tverzhospitaldata_show[geolabel]
           in: query
           schema:
             type: string
+          description: Geographical label filter
         - name: tx_tverzhospitaldata_show[quantile]
           in: query
           schema:
             type: string
+          description: Quantile filter
         - name: tx_tverzhospitaldata_show[searchlabel]
           in: query
           schema:
             type: string
+          description: Search label filter
         - name: cHash
           in: query
           schema:
             type: string
+          description: Cache hash
       responses:
         '200':
           description: Successful response
@@ -389,3 +404,4 @@ paths:
             text/html:
               schema:
                 type: string
+
